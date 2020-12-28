@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NinjaSushi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="loadd()">
+<canvas  id="can">
+
+</canvas>
+<header>
+    <nav>
+        <div class="navbar-fixed">
+            <div class="nav-wrapper" style="font-family: Arial;">
+                <div class="container">
+                    <img src="img/ninja-logo.svg" alt="Logo">
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a class="oury" href="#menu"><font style="vertical-align: inherit;font-size: 18px">
+                                <font style="vertical-align: inherit;color:#000000;">Полное меню</font></font>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="acti" href="#acti"><font style="vertical-align: inherit;font-size: 18px">
+                                <font style="vertical-align: inherit;color:black;">Акции</font></font>
+                            </a>
+                        </li>
+                        <li>
+                            <a class = "contact" href="#about_us"><font style="vertical-align: inherit;font-size: 18px">
+                                <font style="vertical-align: inherit ;color:black;">Контакты</font></font>
+                            </a>
+                        </li>
+                        <li> <div class="menu-openner"><span>0</span> эл. в корзине</div></li>
+                        <li><a class="sushik" href="#basket"><img src="img/cart-icon.svg"></img></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="slider" style="height: 400px;">
+    <ul class="slides" style="height: 400px;">
+        <li class="" style="opacity: 0; transform: translateX(0px) translateY(0px);">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 style="background-image: url(img/Seafoods_Sushi_Chopsticks_546776_1324x1024.jpg);"> <!-- random image -->
+            <div class="caption center-align" id="caption"
+                 style="opacity: 0; transform: translateX(0px) translateY(0px);">
+                <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Забирейте Ваш заказ с 22:00-23:00</font></font></h3>
+                <h5 class="light grey-text text-lighten-3"><font style="vertical-align: inherit;"><font
+                        style="vertical-align: inherit;">получите скидку 30%
+                </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">на каждый второй товар в заказе</font></font></h5>
+            </div>
+        </li>
+        <li class="" style="opacity: 0; transform: translateX(0px) translateY(0px);">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 style="background-image: url(img/moreprodukty-rolly-sushi-ryba.jpg);"> <!-- random image -->
+            <div class="caption center-align" id="caption"
+                 style="opacity: 0; transform: translateX(0px) translateY(0px);">
+                <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Хотите почувсвтвовать
+                    лучший вкус</font></font></h3>
+                <h5 class="light grey-text text-lighten-3"><font style="vertical-align: inherit;"><font
+                        style="vertical-align: inherit;">Мы всегда готовы Вам помочь
+                </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">с
+                    этим</font></font></h5>
+            </div>
+        </li>
+        <li class="active" style="opacity: 1; transform: translateX(0px) translateY(0px);">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 style="background-image: url(img/205165c4c868d8e0ece8d8.jpg);"> <!-- random image -->
+            <div class="caption center-align" id="caption"
+                 style="opacity: 1; transform: translateX(0px) translateY(0px);">
+                <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Хотите почувсвтвовать
+                    лучший вкус</font></font></h3>
+                <h5 class="light grey-text text-lighten-3"><font style="vertical-align: inherit;"><font
+                        style="vertical-align: inherit;">Мы всегда готовы Вам помочь
+                </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">с
+                    этим</font></font></h5>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="models">
+    <div class="sushi-item">
+        <a href="">
+            <div class="sushi-item--img"><img src="" /></div>
+            <div class="sushi-item--add">+</div>
+        </a>
+        <div class="sushi-item--price"></div>
+        <div class="sushi-item--name"></div>
+        <div class="sushi-item--desc"></div>
+    </div>
+    <div class="cart--item">
+        <img src="" />
+        <div class="cart--item-nome"></div>
+        <div class="cart--item--qtarea">
+            <button class="cart--item-qtmenos">-</button>
+            <div class="cart--item--qt">1</div>
+            <button class="cart--item-qtmais">+</button>
+        </div>
+    </div>
+</div>
+<main id='catalog' class="outry">
+    <h1 class="center light black-text">Меню</h1>
+    <h1 id = 'best'>Популярные</h1>
+    <div class="sushi-area1 sushi-area"></div>
+    <h1 id='cheapest' class="Stocks">Акционная продукция</h1>
+    <div class="sushi-area2 sushi-area acti"></div>
+    <h1 id='cheff'>Рекомендация</h1>
+    <div class="sushi-area3 sushi-area"></div>
+</main>
+<aside id = 'basket'>
+    <div class="cart--area">
+        <div class="menu-closer">❌</div>
+        <h1>Ваш заказ</h1>
+        <div class="cart"></div>
+        <div class="cart--details">
+            <div class="cart--totalitem subtotal">
+                <span>Начальная стоимость</span>
+                <span></span>
+            </div>
+            <div class="cart--totalitem desconto">
+                <span>Скидка (-10%)</span>
+                <span></span>
+            </div>
+            <div class="cart--totalitem total big">
+                <span>Всего</span>
+                <span></span>
+            </div>
+            <form name="orderForm"  onsubmit="return validateForm()">
+                <div class="form-group" id='cart'>
+                    <label for="name">Имя: </label>
+                    <input type="text" id="name" class="cumer-details form-control">
+                </div>
+                <div class="form-group">
+                    <label for="address">Адрес: </label>
+                    <input type="text" id="address" class="customer-details form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="city">Город: </label>
+                    <input type="text" id="city" class="customer-details form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="email">Почта: </label>
+                    <input type="text" id="state" class="customer-details form-control">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Номер:(Формат:+380 (XX)-XXX-XX-XX) </label>
+                    <input type="text" id="phone" class="customer-details form-control">
+                </div>
+                <button type="submit" class="btn btn-dark">Подтвердите заказ</button>
+            </form>
+
+            <div onClick="doTask()" class="cart--finalizar">Удалить</div>
+            <div class=""></div>
+        </div>
+    </div>
+</aside>
+
+
+
+<div class="serverError" id='serverError'>
+    <h1> Что-то пошло не так,попробуйте сново</h1>
+</div>
+<div class="orderPage" id="order">
+    <h1 id = 'orderH'>Ваш заказ</h1>
+    <div class="orderId order--item">
+        <span class="rrr">Номер:</span>
+        <span></span>
+    </div>
+    <div class="orderSushisList order--item">
+        <span class="rrr">Состав:</span>
+        <span></span>
+    </div>
+    <div class="orderName order--item">
+        <span class="rrr">Имя: </span>
+        <span></span>
+    </div>
+    <div class="orderAdress order--item">
+        <span class="rrr">Адрес:</span>
+        <span></span>
+    </div>
+    <div class="orderCity order--item">
+        <span class="rrr">Город:</span>
+        <span></span>
+    </div>
+    <div class="orderPhone order--item">
+        <span class="rrr">Телефон:</span>
+        <span></span>
+    </div>
+    <button type="submit" onClick="closeOrder()" class="btn btn-dark">Подтвердить</button>
+
+</div>
+
+
+
+<div class="sushiWindowArea">
+    <div class="sushiWindowBody">
+        <div class="boxBack">
+            <div class="sushiInfo--cancelMobileButton">❌</div>
+        </div>
+        <div class="sushiBig">
+            <img src="" />
+        </div>
+        <div class="sushiInfo">
+            <h1>--</h1>
+            <div class="sushiInfo--desc"></div>
+            <div class="sushiInfo--sizearea">
+                <div class="sushiInfo--sector">Размер</div>
+                <div class="sushiInfo--sizes">
+                    <div data-key="0" class="sushiInfo--size">Мини<span></span></div>
+                    <div data-key="1" class="sushiInfo--size">Средний<span></span></div>
+                    <div data-key="2" class="sushiInfo--size selected">Большой<span></span></div>
+                </div>
+            </div>
+            <div class="sushiInfo--pricearea">
+                <div class="sushiInfo--sector">Стоимость:</div>
+                <div class="sushiInfo--price">
+                    <div class="sushiInfo--actualPrice"></div>
+                    <div class="sushiInfo--qtarea">
+                        <button class="sushiInfo--qtmenos">-</button>
+                        <div class="sushiInfo--qt">1</div>
+                        <button class="sushiInfo--qtmais">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sushiInfo--addButton">Добавить в корзину</div>
+            <div class="sushiInfo--cancelButton">Отменить</div>
+        </div>
+    </div>
+</div>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <img src="img/footer.svg">
+                <ul class="black-text">
+                    <li>
+                        📍Доставка суши премиум-класса
+                    </li>
+                    <li>
+                        📍Киев, Одесса, Днепр, Харьков
+                    </li>
+                    <li>
+                        📍Москва
+                    </li>
+                    <li>
+                        📍Краснодар
+                    </li>
+                    <li>
+                        📍Баку
+                    </li>
+                </ul>
+            </div>
+            <div class="col l4 offset-l12 s12"></div>
+            <h4 class="black-text">Контакты:</h4>
+            <ul class="black-text">
+                <li>
+                    +38 (067) 436 61 27
+                </li>
+                <li>
+                    +38 (066) 031 76 30
+                </li>
+                <li>
+                    +38 (093) 924 98 28
+                </li>
+                <li>
+                    +38 (098) 528 47 47
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-copyright" style="background: white">
+        <div class="container">
+            <p class="black-text">@2020 KPI LAB 4 OKR</p>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="mainPage.js"></script>
+<script src="navigation.js"></script>
+</body>
+</html>
